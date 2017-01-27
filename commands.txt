@@ -1,0 +1,11 @@
+scp index.php pi@192.168.178.198:/var/www/html
+ssh pi@192.168.178.198
+sudo nano /var/log/apache2/error.log
+sudo nano /var/log/apache2/access.log
+sudo rm /var/www/html/index.php
+
+gpio mode 0 out
+gpio write 0 1
+
+http://192.168.178.198/?led1=1
+http://192.168.178.198/?R=56&G=236&B=224
